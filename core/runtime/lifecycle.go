@@ -1,23 +1,9 @@
 package runtime
 
-// State represents the lifecycle state of an engine or runtime.
-type State int
+type Lifecycle string
 
 const (
-	StateCreated State = iota
-	StateRunning
-	StateStopped
+	Created Lifecycle = "Created"
+	Running Lifecycle = "Running"
+	Stopped Lifecycle = "Stopped"
 )
-
-func (s State) String() string {
-	switch s {
-	case StateCreated:
-		return "created"
-	case StateRunning:
-		return "running"
-	case StateStopped:
-		return "stopped"
-	default:
-		return "unknown"
-	}
-}
